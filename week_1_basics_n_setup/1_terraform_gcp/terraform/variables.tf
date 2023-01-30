@@ -3,7 +3,7 @@ locals {
 }
 
 variable "project" {
-  description = "uplifted-sphinx-376118"
+  description = "dtc-de-course-376117"
 }
 
 variable "region" {
