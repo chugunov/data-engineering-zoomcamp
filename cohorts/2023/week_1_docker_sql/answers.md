@@ -89,7 +89,7 @@ $ wget -P ./datasets https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv
 $ python -m venv .venv
 $ source .venv/bin/activate
 $ pip install pandas sqlalchemy psycopg2
-$ python ingest_data.py \                                                               Py data-engineering-zoomcamp
+$ python ingest_data.py \
     --user=root \
     --password=root \
     --host=0.0.0.0 \
@@ -97,7 +97,7 @@ $ python ingest_data.py \                                                       
     --db=ny_taxi \
     --table_name=zones \
     --csv_name=./datasets/taxi+_zone_lookup.csv
-$ python ingest_data.py \                                                               Py data-engineering-zoomcamp
+$ python ingest_data.py \
     --user=root \
     --password=root \
     --host=0.0.0.0 \
