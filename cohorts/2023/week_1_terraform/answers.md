@@ -120,15 +120,10 @@ Do you want to perform these actions?
 
 google_bigquery_dataset.dataset: Creating...
 google_storage_bucket.data-lake-bucket: Creating...
-google_storage_bucket.data-lake-bucket: Creation complete after 7s [id=dtc_data_lake_dtc-de-course-376117]
-╷
-│ Error: Error creating Dataset: googleapi: Error 409: Already Exists: Dataset dtc-de-course-376117:trips_data_all, duplicate
-│
-│   with google_bigquery_dataset.dataset,
-│   on main.tf line 45, in resource "google_bigquery_dataset" "dataset":
-│   45: resource "google_bigquery_dataset" "dataset" {
-│
-╵
+google_bigquery_dataset.dataset: Creation complete after 3s [id=projects/dtc-de-course-376117/datasets/trips_data_all]
+google_storage_bucket.data-lake-bucket: Creation complete after 5s [id=dtc_data_lake_dtc-de-course-376117]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
 
 ## Submitting the solutions
