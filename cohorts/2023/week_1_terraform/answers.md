@@ -20,9 +20,9 @@ Paste the output of this command into the homework submission form.
 ```bash
 $ terraform apply
 var.project
-  uplifted-sphinx-376118
+  dtc-de-course-376117
 
-  Enter a value: yes
+  Enter a value: dtc-de-course-376117
 
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
@@ -40,7 +40,7 @@ Terraform will perform the following actions:
       + labels                     = (known after apply)
       + last_modified_time         = (known after apply)
       + location                   = "europe-west6"
-      + project                    = "yes"
+      + project                    = "dtc-de-course-376117"
       + self_link                  = (known after apply)
 
       + access {
@@ -78,7 +78,7 @@ Terraform will perform the following actions:
       + force_destroy               = true
       + id                          = (known after apply)
       + location                    = "EUROPE-WEST6"
-      + name                        = "dtc_data_lake_yes"
+      + name                        = "dtc_data_lake_dtc-de-course-376117"
       + project                     = (known after apply)
       + public_access_prevention    = (known after apply)
       + self_link                   = (known after apply)
@@ -120,16 +120,9 @@ Do you want to perform these actions?
 
 google_bigquery_dataset.dataset: Creating...
 google_storage_bucket.data-lake-bucket: Creating...
+google_storage_bucket.data-lake-bucket: Creation complete after 7s [id=dtc_data_lake_dtc-de-course-376117]
 ╷
-│ Error: googleapi: Error 403: The billing account for the owning project is disabled in state absent, accountDisabled
-│
-│   with google_storage_bucket.data-lake-bucket,
-│   on main.tf line 19, in resource "google_storage_bucket" "data-lake-bucket":
-│   19: resource "google_storage_bucket" "data-lake-bucket" {
-│
-╵
-╷
-│ Error: Error creating Dataset: googleapi: Error 400: The project yes has not enabled BigQuery., invalid
+│ Error: Error creating Dataset: googleapi: Error 409: Already Exists: Dataset dtc-de-course-376117:trips_data_all, duplicate
 │
 │   with google_bigquery_dataset.dataset,
 │   on main.tf line 45, in resource "google_bigquery_dataset" "dataset":
