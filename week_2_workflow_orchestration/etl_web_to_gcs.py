@@ -54,4 +54,4 @@ def etl_parent_flow(months: list[int], year: int, color: str):
 
 
 if __name__ == "__main__":
-    etl_parent_flow([2, 3], 2019, "yellow")
+    etl_parent_flow([i for i in range(1, 13)], 2019, "fhv")
