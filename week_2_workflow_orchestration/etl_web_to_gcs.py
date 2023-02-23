@@ -27,9 +27,9 @@ def extract_dataset(month: int, year: int, color: str) -> pd.DataFrame:
 
 @task(log_prints=True)
 def write_local(df: pd.DataFrame, month: int, year: int, color: str) -> Path:
-    path = Path(f"data/{color}/{color}_tripdata_{year}-{month:02}.parquet")
+    path = Path(f"data/{color}/{color}_tripdata_{year}-{month:02}.csv")
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    df.to_parquet(path, compression="gzip")
+    df.to_csv(path, compression="gzip")
     return path
 
 
@@ -55,3 +55,7 @@ def etl_parent_flow(months: list[int], year: int, color: str):
 
 if __name__ == "__main__":
     etl_parent_flow([i for i in range(1, 13)], 2019, "fhv")
+    etl_parent_flow([i for i in range(1, 13)], 2019, "yellow")
+    etl_parent_flow([i for i in range(1, 13)], 2020, "yellow")
+    etl_parent_flow([i for i in range(1, 13)], 2019, "green")
+    etl_parent_flow([i for i in range(1, 13)], 2020, "green")
